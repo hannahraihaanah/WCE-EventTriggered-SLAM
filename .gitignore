@@ -1,0 +1,21 @@
+# Large model files
+*.pth.tar
+*.pth
+*.pt
+*.zip
+pretrained/
+__pycache__/
+*.pyc
+
+# Large media files
+*.gif
+*.mp4
+
+# Large data files
+results/predictions.npy
+results/all_lesions_3d.npy
+event_frames/*.png
+
+# Logs
+*.csv
+*.tfevents*
