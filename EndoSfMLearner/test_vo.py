@@ -47,7 +47,7 @@ def load_tensor_image(filename, args):
 def main():
     args = parser.parse_args()
 
-    weights_pose = torch.load(args.pretrained_posenet)
+    weights_pose = torch.load(args.pretrained_posenet, map_location=torch.device("cpu"))
     pose_net = models.PoseResNet().to(device)
     pose_net.load_state_dict(weights_pose['state_dict'], strict=False)
     pose_net.eval()

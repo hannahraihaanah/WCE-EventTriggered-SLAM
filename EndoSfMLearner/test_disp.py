@@ -37,7 +37,7 @@ def main():
     args = parser.parse_args()
 
     disp_net = models.DispResNet(args.resnet_layers, False).to(device)
-    weights = torch.load(args.pretrained_dispnet)
+    weights = torch.load(args.pretrained_dispnet, map_location=torch.device("cpu"))
     disp_net.load_state_dict(weights['state_dict'])
     disp_net.eval()
 
@@ -61,12 +61,12 @@ def main():
         # tgt_img = load_tensor_image( dataset_dir + test_files[j], args)
 
         # compute speed
-        torch.cuda.synchronize()
+        #torch.cuda.synchronize()
         t_start = time.time()
 
         output = disp_net(tgt_img)
 
-        torch.cuda.synchronize()
+        #torch.cuda.synchronize()
         elapsed_time = time.time() - t_start
         
         avg_time += elapsed_time
