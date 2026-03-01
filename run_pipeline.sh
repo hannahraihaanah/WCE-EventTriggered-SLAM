@@ -42,6 +42,11 @@ echo ""
 echo "STEP 4: Clinical Visualization..."
 python3 clinical_visualizer.py
 
+echo ""
+echo "STEP 5: 3D Trajectory..."
+python3 visualize_3d.py
+
+echo ""
 echo "============================================"
 echo "   PIPELINE COMPLETE!"
 echo "   Poses: results/09.txt"
@@ -60,5 +65,6 @@ echo "============================================"
 echo ""
 echo "📊 To view results run:"
 echo "   eog results/clinical_figure.png"
+echo "   eog results/trajectory_3d.png"
 echo "   eog results/lesion_localization.png"
 echo ""
